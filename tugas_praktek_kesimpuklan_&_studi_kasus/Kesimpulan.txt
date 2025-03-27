@@ -1,0 +1,5 @@
+Kesimpulan
+
+Relasi komposisi pada program ini membantu dalam membangun model data yang lebih realistis dan terstruktur. Setiap kelas memiliki tanggung jawab yang jelas, dan hubungan antar kelas memastikan bahwa data tetap konsisten dan relevan.
+
+Implementasi ini sangat cocok untuk sistem akademik karena mencerminkan hubungan nyata antara mahasiswa, transkrip nilai, semester, dan mata kuliah.
