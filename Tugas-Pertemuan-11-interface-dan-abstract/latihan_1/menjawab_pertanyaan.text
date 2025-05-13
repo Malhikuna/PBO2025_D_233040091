@@ -1,0 +1,48 @@
+1. public abstract double luas();
+
+2. Di kelas Bentuk, method luas adalah abstrak, artinya hanya berupa deklarasi tanpa isi.
+   Di kelas Lingkaran, method luas diimplementasikan untuk menghitung luas lingkaran.
+   Di kelas Tabung, method luas diimplementasikan untuk menghitung luas permukaan tabung.
+
+   Perbedaannya terletak pada:
+
+   - Bentuk perhitungannya sesuai jenis bentuknya.
+
+   - Kelas Bentuk hanya mendefinisikan kerangka metode, sementara kelas turunan (Lingkaran, Tabung) memberikan implementasi spesifik.
+
+3. - Akan terjadi error pada saat kompilasi karena Tabung adalah kelas konkret (bukan abstrak), dan wajib mengimplementasikan semua method abstrak dari superclass-nya (Bentuk).
+
+   - Untuk menghindari error, kelas Tabung harus dijadikan abstrak juga jika tidak ingin mengimplementasikan method luas.
+
+4. public class Main {
+       public static void main(String[] args) {
+           Bentuk lingkaran = new Lingkaran("Lingkaran", 7);
+           Bentuk tabung = new Tabung("Tabung", 7, 10);
+
+           lingkaran.display();
+           tabung.display();
+       }
+   }
+
+5.         <<abstract>>
+           Bentuk
+           --------------
+           # PHI: double
+           # jari2: int
+           --------------
+           + Bentuk(int: jari2)
+           + luas(): double [abstract]
+           + getJari2: int
+           + setJari2(int: jari2)
+                 ▲
+                 |
+       -----------------------------
+       |                           |
+   Lingkaran                     Tabung
+   --------------                ---------------
+                                 - tinggi: int
+   --------------                ---------------
+   + Lingkaran(int: jari2)       + Tabung(int: jari2, int: tinggi)
+   + luas(): double              + luas(): double
+                                 + getTinggi()
+                                 + setTinggi(int: tinggi)
